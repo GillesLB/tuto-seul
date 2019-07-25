@@ -1,0 +1,9 @@
+<div>
+  <div *ngFor="let objet of listeObjets | paginate: { itemsPerPage: 5, currentPage: p }">
+    <span>
+      {{objet.nom}} - {{objet.categorie}} - {{objet.prix}}
+    </span>
+  </div>
+</div>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

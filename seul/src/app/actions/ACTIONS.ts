@@ -1,0 +1,5 @@
+export const ACTIONS = {
+    GET_ADD_BOOK: 'GET_ADD_BOOK',
+    GET_READ_BOOK: 'GET_READ_BOOK',
+    GET_DELETE_BOOK: 'GET_DELETE_BOOK',
+};

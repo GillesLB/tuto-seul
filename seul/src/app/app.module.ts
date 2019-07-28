@@ -1,15 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ListeComponent } from './liste/liste.component';
 import { AjouterComponent } from './ajouter/ajouter.component';
-import { SupprimerComponent } from './supprimer/supprimer.component';
 import { HeaderComponent } from './header/header.component';
 import { ErreurComponent } from './erreur/erreur.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { livreReducer } from 'src/app/reducers/livre.reducer';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AccueilComponent,
     ListeComponent,
     AjouterComponent,
-    SupprimerComponent,
     HeaderComponent,
     ErreurComponent
   ],
@@ -25,6 +27,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     BrowserModule,
     AppRoutingModule,
     NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule,
+    StoreModule.forRoot({livre: livreReducer}),
   ],
   providers: [],
   bootstrap: [AppComponent]
